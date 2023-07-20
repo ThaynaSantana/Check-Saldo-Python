@@ -15,14 +15,14 @@ with open('banco.txt') as banco:
 # removendo a quebra de linha \n e assim separando os valores
 banco_txt = banco_txt.split('\n')
 # armazenando num array
-banco_saldos = [int(saldo) for saldo in banco_txt]
+banco_saldos = [float(saldo) for saldo in banco_txt]
 print('Lendo saldos do banco.txt ...')
 
 with open('sistema.txt') as sistema:
   sistema_txt = sistema.read()
   
 sistema_txt = sistema_txt.split('\n')
-sistema_saldos = [int(saldo) for saldo in sistema_txt]
+sistema_saldos = [float(saldo) for saldo in sistema_txt]
 
 print('Lendo saldos do sistema.txt ...')
 
@@ -36,7 +36,7 @@ if(len(banco_saldos) == len(sistema_saldos)):
       i+=1
     # imprimindo na tela
     for dif in diferencas:
-      print(f'SALDO #{j} - VALOR DIF R${dif}')
+      print(f'SALDO #{j} - VALOR DIF R${dif:.2f}')
       j+=1
   else:
     print('Cancelado.')
